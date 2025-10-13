@@ -6,13 +6,13 @@
 {% block nav-home %}<li class="nav-active">Home</li>{% endblock %}
 {% block body %}
     <div id="index">
-        <!-- <h1>Pages</h1> -->
+        <!-- <h1>All Pages</h1> -->
         
         <ul id ="show_list">
            
             {% for entry in entries %}
                
-                <li><a href= "{% url 'wiki:title' title=entry %}">{{ entry }}</a> </li> 
+                <li><a href= "{% url 'entry' title=entry %}">{{ entry }}</a> </li> 
               
             {% endfor %}
         </ul>
