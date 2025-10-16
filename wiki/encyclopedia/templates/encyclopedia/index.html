@@ -1,27 +1,4 @@
-{% extends "encyclopedia/layout.html" %}
 
-{% block title %}
-    Encyclopedia
-{% endblock %}
-{% block nav-home %}<li class="nav-active">Home</li>{% endblock %}
-{% block body %}
-    <div id="index">
-        <!-- <h1>All Pages</h1> -->
-        
-        <ul id ="show_list">
-           
-            {% for entry in entries %}
-               
-                <li><a href= "{% url 'entry' title=entry %}">{{ entry }}</a> </li> 
-              
-            {% endfor %}
-        </ul>
-    
-    </div>
-
-{% endblock %}
-
-<!--
 <!DOCTYPE html>
 
 <html lang="en">
@@ -31,6 +8,13 @@
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
     </head>
     <body>
+        
+        <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+    
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
                 <h2>Wikipedia</h2>
@@ -53,4 +37,3 @@
 
     </body>
 </html>
--->
